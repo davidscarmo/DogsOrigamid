@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./LoginForm.module.css";
 import stylesBtn from '../Forms/Button.module.css';
 import { Link } from "react-router-dom";
-import { TOKEN_POST, USER_GET } from "../../api";
 import useForm from "../../Hooks/useForm";
 import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
