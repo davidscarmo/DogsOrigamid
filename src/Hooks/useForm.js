@@ -11,6 +11,10 @@ const types = {
     message:
       "A sua senha deve conter 8 caracteres sendo ao menos 1 letra maiúscula, 1 letra mínuscula e 1 número",
   },
+  number: {
+    regex: /^\d+$/,
+    message: "Apenas utilize numeros"
+  }
 };
 const useForm = (type) => {
   const [value, setValue] = React.useState("");
