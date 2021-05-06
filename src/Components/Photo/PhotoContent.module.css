@@ -33,7 +33,7 @@
 @media (max-width: 64rem) {
   .photo {
     height: auto;
-    max-height: calc(100vh -4rem);
+    max-height: calc(100vh - 4rem);
     overflow-y: auto;
     grid-template-columns: minmax(20rem, 40rem);
   }
@@ -44,6 +44,7 @@
 
 .author {
   opacity: 0.5;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
