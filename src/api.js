@@ -75,3 +75,17 @@ export function PHOTO_GET(id) {
     },
   };
 }
+
+export function COMMENT_POST(id, body) {
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+    options: {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      }, //it isn't the best way, it is just an example
+      body: JSON.stringify(body),
+    },
+  };
+}
