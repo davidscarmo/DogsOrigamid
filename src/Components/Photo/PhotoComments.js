@@ -4,11 +4,15 @@ import { UserContext } from "../../UserContext";
 import PhotoCommentsForm from "./PhotoCommentsForm";
 const PhotoComments = (props) => {
   const [comments, setComments] = React.useState(() => props.comments);
+  const commentsSection = React.useRef(null);
   const { login } = React.useContext(UserContext);
-  console.log(comments);
+  React.useEffect(() => {
+    //set the position of the scroll at the bottom of the section 
+    commentsSection.current.scrollTop = commentsSection.current.scrollHeight; 
+  }, [comments])
   return (
     <>
-      <ul className={styles.comments}>
+      <ul ref={commentsSection} className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
             {console.log(comment.comment_content)}
