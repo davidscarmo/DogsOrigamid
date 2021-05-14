@@ -19,16 +19,27 @@
     transform: initial;
   }
 }
+/* change the photo component into a one column page when the page shows only the page of an unique photo */
+.single.photo {
+  grid-template-columns: 1fr;
+  height: auto;
+}
 .details {
   padding: 2rem 2rem 0 2rem;
+}
+.single .details {
+  padding: 1rem 0px 0px 0px;
 }
 .img {
   grid-row: 1/4;
 }
-
-.comments {
-  padding: 0 2rem;
+.single .img {
+  grid-row: 1;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
+
+
 
 @media (max-width: 64rem) {
   .photo {
@@ -63,27 +74,25 @@
   background: url("../../Assets/visualizacao-black.svg");
 }
 
-.attributes 
-{
-  display: flex; 
+.attributes {
+  display: flex;
   font-size: 1.125rem;
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-.attributes li 
-{
+.attributes li {
   margin-right: 2rem;
 }
-.attributes li::before{
+.attributes li::before {
   content: "";
   display: inline-block;
-  height: 20px; 
+  height: 20px;
   margin-right: 0.5rem;
   position: relative;
   top: 3px;
-  width: 2px; 
-  background: #333; 
+  width: 2px;
+  background: #333;
   margin-top: 5px;
 }
