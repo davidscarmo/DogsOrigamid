@@ -82,7 +82,7 @@ export function COMMENT_POST(id, body) {
     options: {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       }, //it isn't the best way, it is just an example
       body: JSON.stringify(body),
@@ -97,7 +97,33 @@ export function PHOTO_DELETE(id) {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + window.localStorage.getItem("token"),
-      }
-    }
-  }
+      },
+    },
+  };
+}
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
+export function PASSWORD_RESET(body) {
+  return {
+    url: `${API_URL}/api/password/reset`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
 }
