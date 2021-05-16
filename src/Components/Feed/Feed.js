@@ -5,12 +5,12 @@ import PropTypes from "prop-types";
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
   const [pages, setPages] = React.useState([1, 2, 3]);
-  const [inifite, setInifite] = React.useState(true);
-  // inifite scroll effect activated by scrolling the page and mouse wheel
+  const [infinite, setInfinite] = React.useState(true);
+  // infinite scroll effect activated by scrolling the page and mouse wheel
   React.useEffect(() => {
     let wait = false;
     function infiniteScroll() {
-      if (inifite) {
+      if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
         console.log(scroll);
@@ -32,7 +32,7 @@ const Feed = ({ user }) => {
       window.removeEventListener("wheel", infiniteScroll);
       window.removeEventListener("scroll", infiniteScroll);
     };
-  }, [inifite]);
+  }, [infinite]);
   return (
     <div>
       {modalPhoto && (
@@ -44,9 +44,20 @@ const Feed = ({ user }) => {
           key={page}
           page={page}
           setModalPhoto={setModalPhoto}
-          setInifite={setInifite}
+          setInfinite={setInfinite}
         />
       ))}
+          {!infinite && !user && (
+        <p
+          style={{
+            textAlign: 'center',
+            padding: '2rem 0 4rem 0',
+            color: '#888',
+          }}
+        >
+          Não existem mais postagens.
+        </p>
+      )}
     </div>
   );
 };

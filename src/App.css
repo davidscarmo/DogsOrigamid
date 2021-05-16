@@ -85,3 +85,16 @@ a {
     transform: initial;
   }
 }
+
+/*Fix the problem with the footer going up */
+.app 
+{
+  display: flex; 
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.appBody
+{
+  flex: 1;
+}
