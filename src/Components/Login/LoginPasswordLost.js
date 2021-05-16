@@ -5,6 +5,7 @@ import useForm from "../../Hooks/useForm";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import Error from "../Helper/Error";
+import Head from "../Helper/Head";
 
 function LoginPasswordLost() {
   const login = useForm();
@@ -23,6 +24,7 @@ function LoginPasswordLost() {
   };
   return (
     <section>
+      <Head title="Perdeu a sua senha" description="Página para recuperar a senha" />
       {data ? <p style={{color: '#4c1'}}>{data}</p> : 
       <form onSubmit={handleSubmit}>
       <h1 className="title">Perdeu a Senha </h1>
