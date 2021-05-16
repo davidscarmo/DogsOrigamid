@@ -98,3 +98,8 @@ a {
 {
   flex: 1;
 }
+
+/* solve the problem with the style 'height: 100%' that comes automatically with the component of the libray Victory */
+.VictoryContainer {
+  height: initial !important;
+}
