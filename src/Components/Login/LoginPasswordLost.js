@@ -23,7 +23,7 @@ function LoginPasswordLost() {
     }
   };
   return (
-    <section>
+    <section className="animeLeft">
       <Head title="Perdeu a sua senha" description="Página para recuperar a senha" />
       {data ? <p style={{color: '#4c1'}}>{data}</p> : 
       <form onSubmit={handleSubmit}>
