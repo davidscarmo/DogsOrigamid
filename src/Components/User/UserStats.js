@@ -1,5 +1,5 @@
 import React from "react";
-import { STATS_GET } from "../../Api";
+import { STATS_GET } from "../../Api.js";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
 import Head from "../Helper/Head";
